@@ -13,7 +13,7 @@ using namespace  std;
 //获取业务号
 int GetServiceTypeID()
 {
-	return 14;
+	return 8;
 }
 
 //获取业务名称
@@ -147,6 +147,8 @@ LRESULT Char2Json(QString &buff, QJsonObject &json)
 					SubJson.insert("StationID", "NULL");
 					//设备号
 					SubJson.insert("DeviceID", QString::number(frame.SrcAddr));
+					//数据存储类型
+					SubJson.insert("DataSourceID", 14);
 					frame.data = strBuff.mid(5, frame.len);
 					//数据个数
 					Count += 1;
